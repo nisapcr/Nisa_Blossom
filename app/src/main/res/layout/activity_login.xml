@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- JUDUL -->
+        <TextView
+            android:text="MyTask App"
+            android:textSize="20sp"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_marginBottom="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- LOGO -->
+        <ImageView
+            android:src="@drawable/logo_design"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginBottom="16dp"/>
+
+
+        <!-- USERNAME -->
+        <EditText
+            android:id="@+id/etUsername"
+            android:hint="Enter your Username"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+
+        <!-- PASSWORD -->
+        <EditText
+            android:id="@+id/etPassword"
+            android:hint="Enter Password"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+
+        <!-- BUTTON LOGIN -->
+        <Button
+            android:id="@+id/btnLogin"
+            android:text="Login"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/primary"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

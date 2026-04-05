@@ -11,15 +11,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Nisablossom">
+
+        <!-- PERTEMUAN 2 -->
         <activity
             android:name=".pertemuan_2.MainActivity"
+            android:exported="true" />
+
+        <!-- PERTEMUAN 3 -->
+        <activity android:name=".pertemuan_3.WelcomeActivity" />
+
+        <activity
+            android:name=".pertemuan_3.LoginActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
     </application>
 
 </manifest>
