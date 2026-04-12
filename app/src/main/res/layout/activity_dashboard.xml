@@ -1,44 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:gravity="center"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/background"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
-    <!-- WELCOME -->
-    <TextView
-        android:id="@+id/tvWelcome"
-        android:text="Welcome"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <!-- BUTTON -->
-    <Button
-        android:id="@+id/btnBangunRuang"
-        android:text="Bangun Ruang"
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btnCustom1"
-        android:text="Custom 1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <!-- LOGO -->
+        <ImageView
+            android:src="@drawable/logo_design"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="12dp"/>
 
-    <Button
-        android:id="@+id/btnCustom2"
-        android:text="Custom 2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <!-- WELCOME -->
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:text="Welcome"
+            android:textSize="20sp"
+            android:textColor="@color/primary"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_marginBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-    <Button
-        android:id="@+id/btnLogout"
-        android:text="Logout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <!-- CONTAINER -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-</LinearLayout>
+            <!-- Bangun Ruang -->
+            <Button
+                android:id="@+id/btnBangunRuang"
+                android:text="Bangun Ruang"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/primary"
+                android:layout_marginBottom="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+            <!-- Custom 1 -->
+            <Button
+                android:id="@+id/btnCustom1"
+                android:text="Custom 1"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/primary"
+                android:layout_marginBottom="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+            <!-- Custom 2 -->
+            <Button
+                android:id="@+id/btnCustom2"
+                android:text="Custom 2"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/primary"
+                android:layout_marginBottom="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+            <!-- Logout -->
+            <Button
+                android:id="@+id/btnLogout"
+                android:text="Logout"
+                android:textColor="@color/white"
+                android:backgroundTint="#E53935"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

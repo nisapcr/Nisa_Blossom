@@ -1,71 +1,101 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:gravity="center"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/background"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
-    <!-- WELCOME -->
-    <TextView
-        android:id="@+id/tvWelcome"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="12dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <!-- JUDUL -->
-    <TextView
-        android:id="@+id/tvJudul"
-        android:text="Profil Saya"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <!-- DESKRIPSI -->
-    <TextView
-        android:id="@+id/tvDeskripsi"
-        android:text="Ini adalah halaman profil sederhana"
-        android:layout_marginBottom="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <!-- GAMBAR -->
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/logo_design"
-        android:layout_marginBottom="16dp"/>
-
-    <!-- INPUT NAMA -->
-    <EditText
-        android:id="@+id/etNama"
-        android:hint="Masukkan Nama"
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <!-- BUTTON -->
-    <Button
-        android:id="@+id/btnTampil"
-        android:text="Tampilkan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent">
 
-    <!-- HASIL -->
-    <TextView
-        android:id="@+id/tvHasil"
-        android:layout_marginTop="12dp"
-        android:text="Hasil tampil di sini"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <!-- LOGO -->
+        <ImageView
+            android:src="@drawable/logo_design"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="12dp"/>
 
-    <!-- BACK -->
-    <Button
-        android:id="@+id/btnBack"
-        android:text="Kembali"
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <!-- WELCOME -->
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:text="Welcome"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:layout_marginBottom="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-</LinearLayout>
+        <!-- CARD -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- JUDUL -->
+            <TextView
+                android:id="@+id/tvJudul"
+                android:text="Profil Saya"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary"
+                android:layout_marginBottom="6dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <!-- DESKRIPSI -->
+            <TextView
+                android:id="@+id/tvDeskripsi"
+                android:text="Ini adalah halaman profil sederhana"
+                android:layout_marginBottom="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <!-- INPUT -->
+            <EditText
+                android:id="@+id/etNama"
+                android:hint="Masukkan Nama"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+            <!-- BUTTON -->
+            <Button
+                android:id="@+id/btnTampil"
+                android:text="Tampilkan"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/primary"
+                android:layout_marginBottom="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+            <!-- HASIL -->
+            <TextView
+                android:id="@+id/tvHasil"
+                android:text="Hasil tampil di sini"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <!-- BACK -->
+            <Button
+                android:id="@+id/btnBack"
+                android:text="Kembali"
+                android:textColor="@color/white"
+                android:backgroundTint="#E53935"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
