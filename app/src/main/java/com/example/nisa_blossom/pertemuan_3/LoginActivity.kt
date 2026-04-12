@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.nisa_blossom.databinding.ActivityLoginBinding
+import com.example.nisa_blossom.pertemuan_4.DashboardActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -18,7 +19,7 @@ class LoginActivity : AppCompatActivity() {
         binding.btnLogin.setOnClickListener {
             val username = binding.etUsername.text.toString()
 
-            val intent = Intent(this, WelcomeActivity::class.java)
+            val intent = Intent(this, DashboardActivity::class.java)
             intent.putExtra("USERNAME", username)
             startActivity(intent)
         }

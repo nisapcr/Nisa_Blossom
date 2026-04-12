@@ -5,5 +5,7 @@
         <color name="background">#F2F2F2</color>
         <color name="white">#FFFFFF</color>
         <color name="text_dark">#333333</color>
-
+    <color name="primary1">#FF90CAF9</color>
+    <color name="secondary">#FFCE93D8</color>
+    <color name="background2">#FFF5F5F5</color>
 </resources>

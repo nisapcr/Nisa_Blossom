@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- WELCOME -->
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- JUDUL -->
+    <TextView
+        android:id="@+id/tvJudul"
+        android:text="Profil Saya"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- DESKRIPSI -->
+    <TextView
+        android:id="@+id/tvDeskripsi"
+        android:text="Ini adalah halaman profil sederhana"
+        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- GAMBAR -->
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/logo_design"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- INPUT NAMA -->
+    <EditText
+        android:id="@+id/etNama"
+        android:hint="Masukkan Nama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <!-- BUTTON -->
+    <Button
+        android:id="@+id/btnTampil"
+        android:text="Tampilkan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <!-- HASIL -->
+    <TextView
+        android:id="@+id/tvHasil"
+        android:layout_marginTop="12dp"
+        android:text="Hasil tampil di sini"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- BACK -->
+    <Button
+        android:id="@+id/btnBack"
+        android:text="Kembali"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

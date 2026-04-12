@@ -11,12 +11,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         val etAlas = findViewById<EditText>(R.id.etAlas)
         val etTinggi = findViewById<EditText>(R.id.etTinggi)
         val etSisi = findViewById<EditText>(R.id.etSisi)
         val btnSegitiga = findViewById<Button>(R.id.btnSegitiga)
         val btnKubus = findViewById<Button>(R.id.btnKubus)
+        val btnBack = findViewById<Button>(R.id.btnBack) // ✅ PINDAH KE SINI
         val tvHasil = findViewById<TextView>(R.id.tvHasil)
+
         val hitung = Bangun_Datar()
 
         // 🔺 SEGITIGA
@@ -46,6 +49,11 @@ class MainActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Input sisi kosong", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        // 🔙 BACK BUTTON (SEKARANG AKTIF)
+        btnBack.setOnClickListener {
+            finish()
         }
     }
 }
