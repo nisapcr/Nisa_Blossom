@@ -30,7 +30,7 @@ class Custom_1Activity : AppCompatActivity() {
                 Toast.makeText(this, "Nama tidak boleh kosong", Toast.LENGTH_SHORT).show()
             }
         }
-
+//aliya jelek
         // 🔙 BACK
         btnBack.setOnClickListener {
             finish()
