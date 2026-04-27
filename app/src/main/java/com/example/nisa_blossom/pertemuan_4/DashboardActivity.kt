@@ -1,6 +1,7 @@
 package com.example.nisa_blossom.pertemuan_4
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.nisa_blossom.R
 import com.example.nisa_blossom.pertemuan_2.MainActivity
 import com.example.nisa_blossom.pertemuan_3.LoginActivity
+import com.example.nisa_blossom.pertemuan_6.WebView_Activity
 import com.google.android.material.snackbar.Snackbar
 
 class DashboardActivity : AppCompatActivity() {
@@ -21,40 +23,42 @@ class DashboardActivity : AppCompatActivity() {
         val btnCustom1 = findViewById<Button>(R.id.btnCustom1)
         val btnCustom2 = findViewById<Button>(R.id.btnCustom2)
         val btnLogout = findViewById<Button>(R.id.btnLogout)
+        val btnWeb = findViewById<Button>(R.id.btnWeb)
         val tvWelcome = findViewById<TextView>(R.id.tvWelcome)
 
         val username = intent.getStringExtra("USERNAME")
 
-        // ✅ TAMPILKAN WELCOME
         tvWelcome.text = "Welcome, $username 👋"
 
-        // 🔺 Bangun Ruang
         btnBangunRuang.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("USERNAME", username)
-            startActivity(intent)
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
-        // 📱 Custom 1
         btnCustom1.setOnClickListener {
-            val intent = Intent(this, Custom_1Activity::class.java)
-            intent.putExtra("USERNAME", username)
-            startActivity(intent)
+            startActivity(Intent(this, Custom_1Activity::class.java))
         }
 
-        // 📱 Custom 2
         btnCustom2.setOnClickListener {
-            val intent = Intent(this, Custom_2Activity::class.java)
-            intent.putExtra("USERNAME", username)
-            startActivity(intent)
+            startActivity(Intent(this, Custom_2Activity::class.java))
         }
 
-        // 🚪 Logout
+        // 🌐 WEB BINA DESA
+        btnWeb.setOnClickListener {
+            startActivity(Intent(this, WebView_Activity::class.java))
+        }
+
+        // 🚪 LOGOUT (hapus session)
         btnLogout.setOnClickListener {
             AlertDialog.Builder(this)
                 .setTitle("Konfirmasi")
                 .setMessage("Yakin ingin logout?")
                 .setPositiveButton("Ya") { _, _ ->
+
+                    val sharedPreferences = getSharedPreferences("login", MODE_PRIVATE)
+                    val editor = sharedPreferences.edit()
+                    editor.clear()
+                    editor.apply()
+
                     startActivity(Intent(this, LoginActivity::class.java))
                     finish()
                 }

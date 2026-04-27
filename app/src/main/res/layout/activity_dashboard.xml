@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,74 +9,102 @@
     <LinearLayout
         android:orientation="vertical"
         android:padding="24dp"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <!-- LOGO -->
         <ImageView
             android:src="@drawable/logo_design"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginBottom="12dp"/>
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="16dp"
+            android:elevation="8dp"/>
 
-        <!-- WELCOME -->
         <TextView
             android:id="@+id/tvWelcome"
-            android:text="Welcome"
-            android:textSize="20sp"
+            android:text="Selamat Datang"
+            android:textSize="24sp"
             android:textColor="@color/primary"
             android:fontFamily="@font/poppins_bold"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="32dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.02"/>
 
-        <!-- CONTAINER -->
         <LinearLayout
             android:orientation="vertical"
             android:background="#FFFFFF"
-            android:padding="20dp"
+            android:padding="24dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp">
 
-            <!-- Bangun Ruang -->
             <Button
                 android:id="@+id/btnBangunRuang"
                 android:text="Bangun Ruang"
+                android:textAllCaps="false"
+                android:textSize="16sp"
                 android:textColor="@color/white"
                 android:backgroundTint="@color/primary"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="16dp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"/>
+                android:layout_height="56dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                app:cornerRadius="12dp"/>
 
-            <!-- Custom 1 -->
             <Button
                 android:id="@+id/btnCustom1"
-                android:text="Custom 1"
+                android:text="Fitur Custom 1"
+                android:textAllCaps="false"
+                android:textSize="16sp"
                 android:textColor="@color/white"
                 android:backgroundTint="@color/primary"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="16dp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"/>
+                android:layout_height="56dp"
+                app:cornerRadius="12dp"/>
 
-            <!-- Custom 2 -->
             <Button
                 android:id="@+id/btnCustom2"
-                android:text="Custom 2"
+                android:text="Fitur Custom 2"
+                android:textAllCaps="false"
+                android:textSize="16sp"
                 android:textColor="@color/white"
                 android:backgroundTint="@color/primary"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="24dp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"/>
+                android:layout_height="56dp"
+                app:cornerRadius="12dp"/>
 
-            <!-- Logout -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EEEEEE"
+                android:layout_marginBottom="24dp"/>
+
+            <Button
+                android:id="@+id/btnWeb"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Kunjungi Web Bina Desa"
+                android:textAllCaps="false"
+                android:layout_marginBottom="12dp"
+                app:strokeColor="@color/primary"
+                app:cornerRadius="12dp"/>
+
             <Button
                 android:id="@+id/btnLogout"
                 android:text="Logout"
-                android:textColor="@color/white"
-                android:backgroundTint="#E53935"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textColor="#E53935"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"/>
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 

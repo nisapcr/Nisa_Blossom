@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="#F8F9FA"> <ImageView
+    android:layout_width="140dp"
+    android:layout_height="140dp"
+    android:src="@drawable/logo_web"
+    android:contentDescription="Logo Bina Desa"
+    android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bina Desa"
+        android:textSize="28sp"
+        android:fontFamily="sans-serif-medium"
+        android:textStyle="bold"
+        android:letterSpacing="0.05"
+        android:textColor="#2E7D32"/> <ProgressBar
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:indeterminateTint="#2E7D32"
+        android:indeterminate="true"/>
+
+</LinearLayout>
