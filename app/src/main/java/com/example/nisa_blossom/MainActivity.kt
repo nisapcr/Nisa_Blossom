@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.nisa_blossom.Home.pertemuan_2.Bangun_Datar
 
 class MainActivity : AppCompatActivity() {
 

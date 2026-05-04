@@ -1,7 +1,6 @@
-package com.example.nisa_blossom.pertemuan_4
+package com.example.nisa_blossom.Home.pertemuan_4
 
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -9,8 +8,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.nisa_blossom.R
 import com.example.nisa_blossom.pertemuan_2.MainActivity
-import com.example.nisa_blossom.pertemuan_3.LoginActivity
-import com.example.nisa_blossom.pertemuan_6.WebView_Activity
+import com.example.nisa_blossom.Home.pertemuan_3.LoginActivity
+import com.example.nisa_blossom.Home.pertemuan_6.WebView_Activity
 import com.google.android.material.snackbar.Snackbar
 
 class DashboardActivity : AppCompatActivity() {

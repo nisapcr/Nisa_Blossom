@@ -1,4 +1,4 @@
-package com.example.nisa_blossom.pertemuan_2
+package com.example.nisa_blossom.Home.pertemuan_2
 
 class Bangun_Datar {
 

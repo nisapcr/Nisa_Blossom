@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <!-- ✅ WAJIB untuk WebView -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,46 +9,39 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Nisablossom">
+        android:theme="@style/Theme.Nisablossom" >
 
-        <!-- 🔥 SPLASH JADI LAUNCHER -->
+        <!-- LAUNCHER ACTIVITY -->
         <activity
-            android:name=".pertemuan_6.Splash_Activity"
-            android:exported="true">
+            android:name=".AuthActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- 🔐 LOGIN -->
+        </activity> <!-- BASE ACTIVITY (HOME SETELAH LOGIN) -->
         <activity
-            android:name=".pertemuan_3.LoginActivity"
-            android:exported="false"/>
-
-        <!-- 🏠 DASHBOARD -->
-        <activity
-            android:name=".pertemuan_4.DashboardActivity"
-            android:exported="false" />
-
-        <!-- 🌐 WEBVIEW -->
-        <activity
-            android:name=".pertemuan_6.WebView_Activity"
-            android:exported="false" />
-
-        <!-- 📱 LAINNYA -->
+            android:name=".BaseActivity"
+            android:exported="false" /> <!-- PERTEMUAN 2 -->
         <activity
             android:name=".pertemuan_2.MainActivity"
-            android:exported="false" />
-
+            android:exported="false" /> <!-- PERTEMUAN 3 -->
         <activity
-            android:name=".pertemuan_4.Custom_1Activity"
-            android:exported="false" />
-
+            android:name=".Home.pertemuan_3.LoginActivity"
+            android:exported="false" /> <!-- PERTEMUAN 4 -->
         <activity
-            android:name=".pertemuan_4.Custom_2Activity"
+            android:name=".Home.pertemuan_4.DashboardActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".Home.pertemuan_4.Custom_1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Home.pertemuan_4.Custom_2Activity"
+            android:exported="false" /> <!-- PERTEMUAN 6 -->
+        <activity
+            android:name=".Home.pertemuan_6.WebView_Activity"
+            android:exported="false" />
     </application>
 
 </manifest>

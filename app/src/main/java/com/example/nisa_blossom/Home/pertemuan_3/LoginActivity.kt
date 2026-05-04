@@ -1,11 +1,10 @@
-package com.example.nisa_blossom.pertemuan_3
+package com.example.nisa_blossom.Home.pertemuan_3
 
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.nisa_blossom.databinding.ActivityLoginBinding
-import com.example.nisa_blossom.pertemuan_4.DashboardActivity
+import com.example.nisa_blossom.Home.pertemuan_4.DashboardActivity
 
 class LoginActivity : AppCompatActivity() {
 

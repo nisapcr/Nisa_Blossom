@@ -1,4 +1,4 @@
-package com.example.nisa_blossom.pertemuan_6
+package com.example.nisa_blossom.Home.pertemuan_6
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,8 +6,8 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.example.nisa_blossom.R
-import com.example.nisa_blossom.pertemuan_3.LoginActivity
-import com.example.nisa_blossom.pertemuan_4.DashboardActivity
+import com.example.nisa_blossom.Home.pertemuan_3.LoginActivity
+import com.example.nisa_blossom.Home.pertemuan_4.DashboardActivity
 
 class Splash_Activity : AppCompatActivity() {
 
