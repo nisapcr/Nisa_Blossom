@@ -1,26 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#F5F5F7">
+
+    <!-- BACKGROUND WAVE HEADER -->
+    <View
+        android:id="@+id/backgroundHeader"
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:background="@drawable/bg_wave_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- TOOLBAR -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#1565C0"
+        android:background="@android:color/transparent"
         android:title="Home"
-        android:titleTextColor="@android:color/white" />
+        android:titleTextColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- CONTENT -->
+    <!-- SCROLLVIEW CONTENT -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -335,6 +347,88 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+            <!-- Pertemuan 9 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnPertemuan9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#E8F0FE">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="14dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/outline_bookmark_24"
+                        android:layout_marginEnd="12dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Pertemuan 9"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="#1565C0" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textSize="20sp"
+                        android:textColor="#1565C0" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 🔥 BUTTON SETTINGS (BARU) 🔥 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnSettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#FFF3E0">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="14dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/dashboard"
+                        android:layout_marginEnd="12dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Pengaturan"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="#E65100" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textSize="20sp"
+                        android:textColor="#E65100" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
             <!-- Logout -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/btnLogout"
@@ -378,4 +472,4 @@
 
         </LinearLayout>
     </ScrollView>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

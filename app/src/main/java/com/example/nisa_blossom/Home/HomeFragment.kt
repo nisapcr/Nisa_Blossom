@@ -15,9 +15,12 @@ import com.example.nisa_blossom.Home.pertemuan_4.Custom_1Activity
 import com.example.nisa_blossom.Home.pertemuan_4.Custom_2Activity
 import com.example.nisa_blossom.Home.pertemuan_4.DashboardActivity
 import com.example.nisa_blossom.Home.pertemuan_6.WebView_Activity
+import com.example.nisa_blossom.Home.pertemuan_9.NinthActivity
+import com.example.nisa_blossom.Home.pertemuan_9.settings.SettingsActivity
 import com.example.nisa_blossom.databinding.FragmentHomeBinding
 import com.example.nisa_blossom.pertemuan_2.MainActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kotlin.jvm.java
 
 class HomeFragment : Fragment() {
 
@@ -77,7 +80,13 @@ class HomeFragment : Fragment() {
         binding.btnWeb.setOnClickListener {
             startActivity(Intent(requireContext(), WebView_Activity::class.java))
         }
-
+        binding.btnPertemuan9.setOnClickListener {
+            startActivity(Intent(requireContext(), NinthActivity::class.java))
+        }
+        // Tombol Settings
+        binding.btnSettings.setOnClickListener {
+            startActivity(Intent(requireContext(), SettingsActivity::class.java))
+        }
         // Tombol Logout
         binding.btnLogout.setOnClickListener {
             MaterialAlertDialogBuilder(requireContext())

@@ -25,13 +25,15 @@ class DashboardActivity : AppCompatActivity() {
         val btnWeb = findViewById<Button>(R.id.btnWeb)
         val tvWelcome = findViewById<TextView>(R.id.tvWelcome)
 
-        val username = intent.getStringExtra("USERNAME")
+        val username = intent.getStringExtra("USERNAME") ?: "User"
 
         tvWelcome.text = "Welcome, $username 👋"
 
         btnBangunRuang.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
+
+
 
         btnCustom1.setOnClickListener {
             startActivity(Intent(this, Custom_1Activity::class.java))
