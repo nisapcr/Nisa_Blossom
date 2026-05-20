@@ -9,4 +9,8 @@
     <color name="secondary">#FFCE93D8</color>
     <color name="background2">#FFF5F5F5</color>
     <color name="biru">#8AB5EB</color>
+    <color name="colorPrimary">#1565C0</color>
+    <color name="colorPrimaryDark">#0D47A1</color>
+    <color name="colorAccent">#42A5F5</color>
+    <color name="biruProyek">#1565C0</color>
 </resources>

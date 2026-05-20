@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.nisa_blossom.AuthActivity
+import com.example.nisa_blossom.Home.pertemuan_10.TenthActivity
 import com.example.nisa_blossom.Home.pertemuan_3.LoginActivity
 import com.example.nisa_blossom.Home.pertemuan_4.Custom_1Activity
 import com.example.nisa_blossom.Home.pertemuan_4.Custom_2Activity
@@ -20,7 +21,6 @@ import com.example.nisa_blossom.Home.pertemuan_9.settings.SettingsActivity
 import com.example.nisa_blossom.databinding.FragmentHomeBinding
 import com.example.nisa_blossom.pertemuan_2.MainActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import kotlin.jvm.java
 
 class HomeFragment : Fragment() {
 
@@ -46,7 +46,7 @@ class HomeFragment : Fragment() {
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as AppCompatActivity).supportActionBar?.title = "Home"
 
-        // Set Welcome Text - INI YANG MERAH, PASTIKAN ID NYA BENAR
+        // Set Welcome Text
         binding.txtWelcome.text = "Welcome, $username 👋"
 
         // Tombol Pertemuan 2
@@ -80,13 +80,22 @@ class HomeFragment : Fragment() {
         binding.btnWeb.setOnClickListener {
             startActivity(Intent(requireContext(), WebView_Activity::class.java))
         }
+
+        // Tombol Pertemuan 9
         binding.btnPertemuan9.setOnClickListener {
             startActivity(Intent(requireContext(), NinthActivity::class.java))
         }
+
+        // Tombol Pertemuan 10
+        binding.btnPertemuan10.setOnClickListener {
+            startActivity(Intent(requireContext(), TenthActivity::class.java))
+        }
+
         // Tombol Settings
         binding.btnSettings.setOnClickListener {
             startActivity(Intent(requireContext(), SettingsActivity::class.java))
         }
+
         // Tombol Logout
         binding.btnLogout.setOnClickListener {
             MaterialAlertDialogBuilder(requireContext())
