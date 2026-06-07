@@ -9,7 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.nisa_blossom.AuthActivity
+import com.example.nisa_blossom.Data.Api.PostApiClient
+import com.example.nisa_blossom.Data.Model.PostModel
+import com.example.nisa_blossom.Home.Berita.PostAdapter
 import com.example.nisa_blossom.Home.pertemuan_10.TenthActivity
 import com.example.nisa_blossom.Home.pertemuan_3.LoginActivity
 import com.example.nisa_blossom.Home.pertemuan_4.Custom_1Activity
@@ -19,8 +23,11 @@ import com.example.nisa_blossom.Home.pertemuan_6.WebView_Activity
 import com.example.nisa_blossom.Home.pertemuan_9.NinthActivity
 import com.example.nisa_blossom.Home.pertemuan_9.settings.SettingsActivity
 import com.example.nisa_blossom.databinding.FragmentHomeBinding
-import com.example.nisa_blossom.pertemuan_2.MainActivity
+import com.example.nisa_blossom.MainActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class HomeFragment : Fragment() {
 
@@ -28,93 +35,219 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(
+        view: View,
+        savedInstanceState: Bundle?
+    ) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Ambil username dari SharedPreferences
-        val sharedPref = requireContext().getSharedPreferences("user_pref", MODE_PRIVATE)
-        val username = sharedPref.getString("username", "User")
+        val sharedPref =
+            requireContext().getSharedPreferences(
+                "user_pref",
+                MODE_PRIVATE
+            )
 
-        // Setup Toolbar
-        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = "Home"
+        val username =
+            sharedPref.getString(
+                "username",
+                "User"
+            )
 
-        // Set Welcome Text
-        binding.txtWelcome.text = "Welcome, $username 👋"
+        // Toolbar
+        (requireActivity() as AppCompatActivity)
+            .setSupportActionBar(binding.toolbar)
 
-        // Tombol Pertemuan 2
+        (requireActivity() as AppCompatActivity)
+            .supportActionBar?.title = "Home"
+
+        // Welcome Text
+        binding.txtWelcome.text =
+            "Welcome, $username 👋"
+
+        // Pertemuan 2
         binding.btnToSecond.setOnClickListener {
-            startActivity(Intent(requireContext(), MainActivity::class.java))
+            startActivity(
+                Intent(
+                    requireContext(),
+                    MainActivity::class.java
+                )
+            )
         }
 
-        // Tombol Pertemuan 3 (Login)
+        // Pertemuan 3
         binding.btnToThird.setOnClickListener {
-            startActivity(Intent(requireContext(), LoginActivity::class.java))
+            startActivity(
+                Intent(
+                    requireContext(),
+                    LoginActivity::class.java
+                )
+            )
         }
 
-        // Tombol Pertemuan 4 (Dashboard)
+        // Pertemuan 4
         binding.btnToFourth.setOnClickListener {
-            val intent = Intent(requireContext(), DashboardActivity::class.java)
-            intent.putExtra("USERNAME", username)
+
+            val intent =
+                Intent(
+                    requireContext(),
+                    DashboardActivity::class.java
+                )
+
+            intent.putExtra(
+                "USERNAME",
+                username
+            )
+
             startActivity(intent)
         }
 
-        // Tombol Custom 1
+        // Custom 1
         binding.btnCustom1.setOnClickListener {
-            startActivity(Intent(requireContext(), Custom_1Activity::class.java))
+            startActivity(
+                Intent(
+                    requireContext(),
+                    Custom_1Activity::class.java
+                )
+            )
         }
 
-        // Tombol Custom 2
+        // Custom 2
         binding.btnCustom2.setOnClickListener {
-            startActivity(Intent(requireContext(), Custom_2Activity::class.java))
+            startActivity(
+                Intent(
+                    requireContext(),
+                    Custom_2Activity::class.java
+                )
+            )
         }
 
-        // Tombol WebView
+        // WebView
         binding.btnWeb.setOnClickListener {
-            startActivity(Intent(requireContext(), WebView_Activity::class.java))
+            startActivity(
+                Intent(
+                    requireContext(),
+                    WebView_Activity::class.java
+                )
+            )
         }
 
-        // Tombol Pertemuan 9
+        // Pertemuan 9
         binding.btnPertemuan9.setOnClickListener {
-            startActivity(Intent(requireContext(), NinthActivity::class.java))
+            startActivity(
+                Intent(
+                    requireContext(),
+                    NinthActivity::class.java
+                )
+            )
         }
 
-        // Tombol Pertemuan 10
+        // Pertemuan 10
         binding.btnPertemuan10.setOnClickListener {
-            startActivity(Intent(requireContext(), TenthActivity::class.java))
+            startActivity(
+                Intent(
+                    requireContext(),
+                    TenthActivity::class.java
+                )
+            )
         }
 
-        // Tombol Settings
+        // Settings
         binding.btnSettings.setOnClickListener {
-            startActivity(Intent(requireContext(), SettingsActivity::class.java))
+            startActivity(
+                Intent(
+                    requireContext(),
+                    SettingsActivity::class.java
+                )
+            )
         }
 
-        // Tombol Logout
+        // Logout
         binding.btnLogout.setOnClickListener {
+
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle("Konfirmasi")
                 .setMessage("Yakin ingin logout?")
                 .setPositiveButton("Ya") { dialog, _ ->
-                    val editor = sharedPref.edit()
+
+                    val editor =
+                        sharedPref.edit()
+
                     editor.clear()
                     editor.apply()
+
                     dialog.dismiss()
-                    startActivity(Intent(requireContext(), AuthActivity::class.java))
+
+                    startActivity(
+                        Intent(
+                            requireContext(),
+                            AuthActivity::class.java
+                        )
+                    )
+
                     requireActivity().finish()
-                    Log.d("Logout", "Berhasil logout")
+
+                    Log.d(
+                        "Logout",
+                        "Berhasil logout"
+                    )
                 }
                 .setNegativeButton("Tidak") { dialog, _ ->
                     dialog.dismiss()
                 }
                 .show()
         }
+
+        // LOAD API BERITA
+        getPosts()
+    }
+
+    private fun getPosts() {
+
+        PostApiClient.instance
+            .getPosts()
+            .enqueue(object : Callback<List<PostModel>> {
+
+                override fun onResponse(
+                    call: Call<List<PostModel>>,
+                    response: Response<List<PostModel>>
+                ) {
+
+                    if (response.isSuccessful) {
+
+                        val data =
+                            response.body()
+                                ?: emptyList()
+
+                        binding.rvPost.layoutManager =
+                            LinearLayoutManager(
+                                requireContext()
+                            )
+
+                        binding.rvPost.adapter =
+                            PostAdapter(data)
+                    }
+                }
+
+                override fun onFailure(
+                    call: Call<List<PostModel>>,
+                    t: Throwable
+                ) {
+
+                    Log.e(
+                        "API_ERROR",
+                        t.message.toString()
+                    )
+                }
+            })
     }
 
     override fun onDestroyView() {

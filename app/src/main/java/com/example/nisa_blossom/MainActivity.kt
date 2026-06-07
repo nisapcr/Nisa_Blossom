@@ -1,60 +1,21 @@
-package com.example.nisa_blossom.pertemuan_2
+package com.example.nisa_blossom
 
-import com.example.nisa_blossom.R
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.*
+import android.os.Handler
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-import com.example.nisa_blossom.Home.pertemuan_2.Bangun_Datar
+import com.example.nisa_blossom.Home.onboarding.OnBoardingActivity
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_splash)
 
-        val etAlas = findViewById<EditText>(R.id.etAlas)
-        val etTinggi = findViewById<EditText>(R.id.etTinggi)
-        val etSisi = findViewById<EditText>(R.id.etSisi)
-        val btnSegitiga = findViewById<Button>(R.id.btnSegitiga)
-        val btnKubus = findViewById<Button>(R.id.btnKubus)
-        val btnBack = findViewById<Button>(R.id.btnBack) // ✅ PINDAH KE SINI
-        val tvHasil = findViewById<TextView>(R.id.tvHasil)
-
-        val hitung = Bangun_Datar()
-
-        // 🔺 SEGITIGA
-        btnSegitiga.setOnClickListener {
-            val alas = etAlas.text.toString().toDoubleOrNull()
-            val tinggi = etTinggi.text.toString().toDoubleOrNull()
-
-            if (alas != null && tinggi != null) {
-                val hasil = hitung.luasSegitiga(alas, tinggi)
-                tvHasil.text = "Luas Segitiga = $hasil"
-
-                Log.d("SEGITIGA", hasil.toString())
-            } else {
-                Toast.makeText(this, "Input tidak boleh kosong", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-        // 🧊 KUBUS
-        btnKubus.setOnClickListener {
-            val sisi = etSisi.text.toString().toDoubleOrNull()
-
-            if (sisi != null) {
-                val hasil = hitung.volumeKubus(sisi)
-                tvHasil.text = "Volume Kubus = $hasil"
-
-                Log.d("KUBUS", hasil.toString())
-            } else {
-                Toast.makeText(this, "Input sisi kosong", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-        // 🔙 BACK BUTTON (SEKARANG AKTIF)
-        btnBack.setOnClickListener {
+        Handler(Looper.getMainLooper()).postDelayed({
+            startActivity(Intent(this, OnBoardingActivity::class.java))
             finish()
-        }
+        }, 3000)
     }
 }

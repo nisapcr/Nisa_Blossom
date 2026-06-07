@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.nisa_blossom.R
-import com.example.nisa_blossom.pertemuan_2.MainActivity
+import com.example.nisa_blossom.MainActivity // ✅ FIXED: Import dari package utama
 import com.example.nisa_blossom.Home.pertemuan_3.LoginActivity
 import com.example.nisa_blossom.Home.pertemuan_6.WebView_Activity
 import com.google.android.material.snackbar.Snackbar
@@ -32,8 +32,6 @@ class DashboardActivity : AppCompatActivity() {
         btnBangunRuang.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
-
-
 
         btnCustom1.setOnClickListener {
             startActivity(Intent(this, Custom_1Activity::class.java))

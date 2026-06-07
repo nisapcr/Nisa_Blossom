@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -10,69 +10,68 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Nisablossom">
+
         <activity
-            android:name=".item_product"
-            android:exported="false" />
-        <activity
-            android:name=".Home.pertemuan_10.ProductModel"
-            android:exported="false" />
-        <activity
-            android:name=".Home.pertemuan_10.ProductAdapter"
-            android:exported="false" />
-        <activity
-            android:name=".Home.pertemuan_10.TabCFragment"
-            android:exported="false" />
-        <activity
-            android:name=".Home.pertemuan_10.TabBFragment"
-            android:exported="false" />
-        <activity
-            android:name=".Home.pertemuan_10.TabAFragment"
-            android:exported="false" />
-        <activity
-            android:name=".Home.pertemuan_10.TenthTabsAdapter"
-            android:exported="false" /> <!-- LAUNCHER ACTIVITY (PERTAMA KALI BUKA APPS) -->
-        <activity
-            android:name=".AuthActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity> <!-- BASE ACTIVITY (SETELAH LOGIN) -->
+        </activity>
+
         <activity
-            android:name=".BaseActivity"
-            android:exported="false" /> <!-- PERTEMUAN 2 -->
+            android:name=".Home.onboarding.OnBoardingActivity"
+            android:exported="false"/>
+
         <activity
-            android:name=".pertemuan_2.MainActivity"
-            android:exported="false" /> <!-- PERTEMUAN 3 -->
-        <activity
-            android:name=".Home.pertemuan_3.LoginActivity"
-            android:exported="false" /> <!-- PERTEMUAN 4 -->
-        <activity
-            android:name=".Home.pertemuan_4.DashboardActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Home.pertemuan_4.Custom_1Activity"
-            android:exported="false" />
-        <activity
-            android:name=".Home.pertemuan_4.Custom_2Activity"
-            android:exported="false" /> <!-- PERTEMUAN 6 -->
-        <activity
-            android:name=".Home.pertemuan_6.WebView_Activity"
-            android:exported="false" /> <!-- PERTEMUAN 9 -->
-        <activity
-            android:name=".Home.pertemuan_9.NinthActivity"
-            android:exported="false" /> <!-- SETTINGS ACTIVITY (di package settings) -->
-        <activity
-            android:name=".Home.pertemuan_9.settings.SettingsActivity"
-            android:exported="false" /> <!-- PERTEMUAN 10 -->
-        <activity
-            android:name=".Home.pertemuan_10.TenthActivity"
-            android:exported="false" />
+            android:name=".AuthActivity"
+            android:exported="false"/>
+
         <activity
             android:name=".RegisterActivity"
-            android:exported="false" />
+            android:exported="false"/>
+
+        <activity
+            android:name=".BaseActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".pertemuan_2.MainActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".Home.pertemuan_3.LoginActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".Home.pertemuan_4.DashboardActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".Home.pertemuan_4.Custom_1Activity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".Home.pertemuan_4.Custom_2Activity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".Home.pertemuan_6.WebView_Activity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".Home.pertemuan_9.NinthActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".Home.pertemuan_9.settings.SettingsActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".Home.pertemuan_10.TenthActivity"
+            android:exported="false"/>
+
     </application>
 
 </manifest>
