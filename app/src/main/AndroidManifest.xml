@@ -11,13 +11,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Nisablossom">
 
+        <!-- Splash Screen sebagai Launcher -->
         <activity
-            android:name=".MainActivity"
+            android:name=".Home.pertemuan_6.Splash_Activity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+
         </activity>
 
         <activity
@@ -36,14 +39,17 @@
             android:name=".BaseActivity"
             android:exported="false"/>
 
+        <!-- Pertemuan 2 -->
         <activity
             android:name=".pertemuan_2.MainActivity"
             android:exported="false"/>
 
+        <!-- Pertemuan 3 -->
         <activity
             android:name=".Home.pertemuan_3.LoginActivity"
             android:exported="false"/>
 
+        <!-- Pertemuan 4 -->
         <activity
             android:name=".Home.pertemuan_4.DashboardActivity"
             android:exported="false"/>
@@ -56,10 +62,12 @@
             android:name=".Home.pertemuan_4.Custom_2Activity"
             android:exported="false"/>
 
+        <!-- Pertemuan 6 -->
         <activity
             android:name=".Home.pertemuan_6.WebView_Activity"
             android:exported="false"/>
 
+        <!-- Pertemuan 9 -->
         <activity
             android:name=".Home.pertemuan_9.NinthActivity"
             android:exported="false"/>
@@ -68,6 +76,7 @@
             android:name=".Home.pertemuan_9.settings.SettingsActivity"
             android:exported="false"/>
 
+        <!-- Pertemuan 10 -->
         <activity
             android:name=".Home.pertemuan_10.TenthActivity"
             android:exported="false"/>

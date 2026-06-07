@@ -23,13 +23,14 @@ import com.example.nisa_blossom.Home.pertemuan_6.WebView_Activity
 import com.example.nisa_blossom.Home.pertemuan_9.NinthActivity
 import com.example.nisa_blossom.Home.pertemuan_9.settings.SettingsActivity
 import com.example.nisa_blossom.databinding.FragmentHomeBinding
-import com.example.nisa_blossom.MainActivity
+import com.example.nisa_blossom.pertemuan_2.MainActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class HomeFragment : Fragment() {
+
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -73,7 +74,7 @@ class HomeFragment : Fragment() {
         binding.txtWelcome.text =
             "Welcome, $username 👋"
 
-        // Pertemuan 2
+        // Pertemuan 2 (Kalkulator)
         binding.btnToSecond.setOnClickListener {
             startActivity(
                 Intent(
@@ -178,9 +179,7 @@ class HomeFragment : Fragment() {
                 .setMessage("Yakin ingin logout?")
                 .setPositiveButton("Ya") { dialog, _ ->
 
-                    val editor =
-                        sharedPref.edit()
-
+                    val editor = sharedPref.edit()
                     editor.clear()
                     editor.apply()
 
@@ -206,7 +205,7 @@ class HomeFragment : Fragment() {
                 .show()
         }
 
-        // LOAD API BERITA
+        // Load Berita API
         getPosts()
     }
 
@@ -254,4 +253,5 @@ class HomeFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }
