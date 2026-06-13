@@ -2,27 +2,27 @@
 
     <item
         android:id="@+id/home"
-        android:icon="@android:drawable/ic_menu_view"
+        android:icon="@drawable/ic_home_24"
         android:title="Home" />
 
     <item
         android:id="@+id/note"
-        android:icon="@android:drawable/ic_menu_edit"
+        android:icon="@drawable/ic_note_24"
         android:title="Note" />
 
     <item
         android:id="@+id/wishlist"
-        android:icon="@android:drawable/ic_menu_save"
+        android:icon="@drawable/ic_wishlist_24"
         android:title="Wishlist" />
 
     <item
         android:id="@+id/about"
-        android:icon="@android:drawable/ic_menu_info_details"
+        android:icon="@drawable/ic_about_24"
         android:title="About" />
 
     <item
         android:id="@+id/profile"
-        android:icon="@android:drawable/ic_menu_myplaces"
+        android:icon="@drawable/ic_profile_24"
         android:title="Profile" />
 
 </menu>
