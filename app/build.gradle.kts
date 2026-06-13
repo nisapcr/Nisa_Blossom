@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
-    // PERBAIKAN 1: HAPUS id("kotlin-kapt") dari sini agar tidak bentrok dengan Built-in Kotlin
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -36,6 +36,12 @@ android {
 }
 
 dependencies {
+    val room_version = "2.7.0"
+
+    implementation("androidx.room:room-runtime:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+
+    ksp("androidx.room:room-compiler:$room_version")
     // UI Components
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("androidx.viewpager2:viewpager2:1.0.0")
@@ -62,4 +68,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
 }

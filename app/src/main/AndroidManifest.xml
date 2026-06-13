@@ -80,7 +80,12 @@
         <activity
             android:name=".Home.pertemuan_10.TenthActivity"
             android:exported="false"/>
-
+        <activity
+            android:name=".Note.NoteFormActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".Wishlist.WishlistFormActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>
